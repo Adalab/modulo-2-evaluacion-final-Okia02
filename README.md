@@ -1,14 +1,7 @@
- ### Hola 👋🏽, soy [Ana Jiménez](https://github.com/Okia02) 
-
-<br/>
-<a href="https://www.linkedin.com/in/ana-jim%C3%A9nez-91270b224/">
+ ### Hola 👋🏽, soy [Ana Jiménez](https://github.com/Okia02) <a href="https://www.linkedin.com/in/ana-jim%C3%A9nez-91270b224/">
   <img align="left" alt="Ana's LinkdeIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />
 </a>
-
-<br />
-<br />
-
-... y también soy una programadora front-end en progreso. Actualmente estoy realizando el bootcamp de [Adalab](https://adalab.es/bootcamp-programacion/) y este es mi ejercicio de la evaluación final del módulo de JavaScript. Te contaré un poco de qué va:
+... y también soy una programadora front-end en progreso. Actualmente estoy realizando el bootcamp de [Adalab](https://adalab.es/bootcamp-programacion/) y este es mi ejercicio de la evaluación final del módulo de JavaScript. Te contaré un poco de qué va.
   
 **¿Qué es esto?**
 
