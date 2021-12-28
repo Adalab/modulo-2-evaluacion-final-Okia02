@@ -4,15 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <link rel="icon" href="./assets/images/favicon.png" />
     <title>Buscador de animes</title>
 
     <!--Style sheets-->
     <link rel="stylesheet" href="./assets/css/main.css" />
-
   </head>
   <body>
-    
+    <header class="header">
+      <h1 class="header__title">Buscador de series de anime</h1>
+      <form class="header__form">
+        <input class="input-search js-input-search" type="search" />
+        <button class="submit-btn js-submit-btn" type="submit">Buscar</button>
+        <button class="reset-btn js-reset-btn" type="reset">Reset</button>
+      </form>
+    </header>
+
+    <main class="main">
+      <section class="main__fav-section">
+        <ul class="fav-list js-fav-list">
+          <h2 class="subtitle-fav">Favoritos</h2>
+        </ul>
+      </section>
+
+      <section class="main__results-section">
+        <ul class="result-list js-result-list">
+          <h2 class="subtitle-results">Resultados</h2>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <small class="footer"
+        >Promo-O / Módulo 2 JavaScript - Evaluación final / ©AnaJiménez</small
+      >
+    </footer>
 
     <script src="./assets/js/main.js"></script>
   </body>

@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"main.css","sourcesContent":[]}
+{"version":3,"sources":["layout/_page.scss"],"names":[],"mappings":"AAAA;EACI,sBAAsB,EAAA","file":"main.css","sourcesContent":[".selected {\n    background-color: aqua;\n}"]}
