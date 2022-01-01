@@ -10,6 +10,6 @@ Haz como Mikasa Ackerman y ¡lánzate a probarlo!
 
  <img align="center" alt="GIF" src="https://animesher.com/orig/1/146/1466/14662/animesher.com_mikasa-ackerman-gif-shingeki-no-kyojin-1466214.gif" />
 
-Si quieres saber un poco más de mí, puedes aquí tienes mi LinkedIn <a href="https://www.linkedin.com/in/ana-jim%C3%A9nez-91270b224/">
+Si quieres saber un poco más de mí, aquí tienes mi LinkedIn <a href="https://www.linkedin.com/in/ana-jim%C3%A9nez-91270b224/">
   <img align="left" alt="Ana's LinkdeIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />
 </a>
