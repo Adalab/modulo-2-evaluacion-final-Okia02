@@ -1,13 +1,12 @@
 "use strict";
-//variables
+
 const inputSearch = document.querySelector(".js-input-search");
 const submitBtn = document.querySelector(".js-submit-btn");
 const resetBtn = document.querySelector(".js-reset-btn");
-//lista de resultados
 const searchResults = document.querySelector(".js-result-list");
-//lista de favoritos
+const resetBtnFav = document.querySelector(".js-reset-btn-fav");
 const favResults = document.querySelector(".js-fav-list");
-let id = "";
+const errorMessage = document.querySelector(".js_errorMessage");
 
 let animes = [];
 let favAnimes = [];
@@ -18,19 +17,13 @@ function getUserInput(ev) {
     .then((response) => response.json())
     .then((animesData) => {
       animes = animesData.results;
-      /*for (const anime of animes) {
-  id = anime.mal_id;
-}*/
       renderResults();
     });
 }
 
-//Pintar resultados
 function renderResults() {
   searchResults.innerHTML = "";
-  for (let i = 0; i < animes.length; i++) {
-    const anime = animes[i];
-    //id = anime.mal_id;
+  for (const anime of animes) {
     searchResults.innerHTML += `<li class='li-element js-li-element' id='${
       anime.mal_id
     }'><img class='anime-img' src='${
@@ -38,34 +31,46 @@ function renderResults() {
       "https://via.placeholder.com/210x295/ffffff/666666/?text=TV"
     }><h3 class='anime-title'>${anime.title}</h3></li>'`;
   }
+  //compareFavResults()
   handlerClickedAnime();
 }
 
-//Pintar resultados favoritos
+/*function compareFavResults() {
+ const lisSelected = document.querySelectorAll(".js-li-element");
+  for (const liSelected of lisSelected) {
+    const isFav = favAnimes.find((fav) => fav.mal_id === liSelected.id);
+    console.log(fav.mal_id);
+  if (isFav === undefined) {
+    liSelected.classList.remove("fav");
+  } else {
+    liSelected.classList.add("fav");
+  }
+  } 
+}*/
+
 function renderFavResults() {
   favResults.innerHTML = "";
   for (let i = 0; i < favAnimes.length; i++) {
     const favAnime = favAnimes[i];
-    //id = favAnime.mal_id;
-    console.log(id);
-    favResults.innerHTML += `<li class='li-element js-li-element fav' id='${
+    favResults.innerHTML += `<li class='li-element js-li-element' id='${
       favAnime.mal_id
     }'><img class='anime-img' src='${
       favAnime.image_url ||
       "https://via.placeholder.com/210x295/ffffff/666666/?text=TV"
     }><h3 class='anime-title'>${
       favAnime.title
-    }</h3></li>'<i class="fas fa-times"></i>`;
+    }</h3><i class="fas fa-times"></i></li>`;
   }
   handlerClickedAnime();
 }
 
-//Añadir resultado a favoritos
 function handlerClickedFav(ev) {
+  ev.preventDefault();
   const clickedAnime = parseInt(ev.currentTarget.id);
   const favClicked = favAnimes.findIndex((fav) => {
     return fav.mal_id === clickedAnime;
   });
+
   if (favClicked === -1) {
     const animeAdd = animes.find((animeElement) => {
       return animeElement.mal_id === clickedAnime;
@@ -74,27 +79,23 @@ function handlerClickedFav(ev) {
   } else {
     favAnimes.splice(favClicked, 1);
   }
-  //pintar favoritos
   renderFavResults();
-  //guardar favoritos
+  renderResults();
   setInLocalStorage();
 }
 
-//Seleccionar elemento de la lista de resultados
 function handlerClickedAnime() {
   const animesListened = document.querySelectorAll(".js-li-element");
   for (const animeListened of animesListened) {
-    //selección y evento
     animeListened.addEventListener("click", handlerClickedFav);
   }
 }
 
-//localizar y convertir favorito para guardar en local
 function setInLocalStorage() {
   const toString = JSON.stringify(favAnimes);
   localStorage.setItem("anime", toString);
 }
-//guardar elemento favorito en local
+
 function getInLocalStorage() {
   const localStorageFavAnimes = localStorage.getItem("anime");
   favAnimes = JSON.parse(localStorageFavAnimes);
@@ -104,17 +105,20 @@ function getInLocalStorage() {
     renderFavResults();
   }
 }
-//importante activar esto
 getInLocalStorage();
 
-//Botón reset
-function handlerResetBtn() {
-  location.reload();
+function handlerResetBtnFav(ev) {
+  ev.preventDefault();
+  localStorage.clear();
+  favResults.innerHTML = "";
 }
 
-//Evento submit
+function handlerResetBtn(ev) {
+  ev.preventDefault();
+  location.reload();
+}
 submitBtn.addEventListener("click", getUserInput);
-//Evento reset
 resetBtn.addEventListener("click", handlerResetBtn);
+resetBtnFav.addEventListener("click", handlerResetBtnFav);
 
 //# sourceMappingURL=main.js.map
