@@ -1,6 +1,27 @@
-//FONT
+//Font
 $font: Verdana, Tahoma, sans-serif;
 
-.font {
-    font-size: medium;
+//Mixins
+//Btns
+@mixin btn {
+    background-color: #000;
+    height: 30px;
+    padding: 0 10px;
+   color: #fff;
+   font-weight: 600;
+    border: 3px #d3f360 solid;
+    border-radius: 50px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s;
+    &:hover {
+      color: #f5adeb;     
+    }
+  }
+//Titles
+@mixin titles {
+    font-family: $font;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
 }

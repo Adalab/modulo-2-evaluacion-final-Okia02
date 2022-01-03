@@ -11,6 +11,8 @@ const errorMessage = document.querySelector(".js_errorMessage");
 let animes = [];
 let favAnimes = [];
 
+"use strict";
+
 function getUserInput(ev) {
   ev.preventDefault();
   fetch(`https://api.jikan.moe/v3/search/anime?q=${inputSearch.value}`)
@@ -21,6 +23,25 @@ function getUserInput(ev) {
     });
 }
 
+function handlerResetBtnFav(ev) {
+  ev.preventDefault();
+  localStorage.clear();
+  favResults.innerHTML = "";
+}
+
+function handlerResetBtn(ev) {
+  ev.preventDefault();
+  location.reload();
+}
+
+submitBtn.addEventListener("click", getUserInput);
+
+resetBtn.addEventListener("click", handlerResetBtn);
+
+resetBtnFav.addEventListener("click", handlerResetBtnFav);
+
+"use strict";
+
 function renderResults() {
   searchResults.innerHTML = "";
   for (const anime of animes) {
@@ -29,7 +50,7 @@ function renderResults() {
     }'><img class='anime-img' src='${
       anime.image_url ||
       "https://via.placeholder.com/210x295/ffffff/666666/?text=TV"
-    }><h3 class='anime-title'>${anime.title}</h3></li>'`;
+    }'><h3 class='anime-title'>${anime.title}</h3></li>`;
   }
   //compareFavResults()
   handlerClickedAnime();
@@ -57,12 +78,14 @@ function renderFavResults() {
     }'><img class='anime-img' src='${
       favAnime.image_url ||
       "https://via.placeholder.com/210x295/ffffff/666666/?text=TV"
-    }><h3 class='anime-title'>${
+    }'><h3 class='anime-title'>${
       favAnime.title
     }</h3><i class="fas fa-times"></i></li>`;
   }
   handlerClickedAnime();
 }
+
+"use strict";
 
 function handlerClickedFav(ev) {
   ev.preventDefault();
@@ -70,7 +93,6 @@ function handlerClickedFav(ev) {
   const favClicked = favAnimes.findIndex((fav) => {
     return fav.mal_id === clickedAnime;
   });
-
   if (favClicked === -1) {
     const animeAdd = animes.find((animeElement) => {
       return animeElement.mal_id === clickedAnime;
@@ -80,7 +102,7 @@ function handlerClickedFav(ev) {
     favAnimes.splice(favClicked, 1);
   }
   renderFavResults();
-  renderResults();
+  //renderResults();
   setInLocalStorage();
 }
 
@@ -90,6 +112,8 @@ function handlerClickedAnime() {
     animeListened.addEventListener("click", handlerClickedFav);
   }
 }
+
+"use strict";
 
 function setInLocalStorage() {
   const toString = JSON.stringify(favAnimes);
@@ -106,19 +130,5 @@ function getInLocalStorage() {
   }
 }
 getInLocalStorage();
-
-function handlerResetBtnFav(ev) {
-  ev.preventDefault();
-  localStorage.clear();
-  favResults.innerHTML = "";
-}
-
-function handlerResetBtn(ev) {
-  ev.preventDefault();
-  location.reload();
-}
-submitBtn.addEventListener("click", getUserInput);
-resetBtn.addEventListener("click", handlerResetBtn);
-resetBtnFav.addEventListener("click", handlerResetBtnFav);
 
 //# sourceMappingURL=main.js.map
