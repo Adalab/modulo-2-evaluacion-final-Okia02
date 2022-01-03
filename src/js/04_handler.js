@@ -14,8 +14,8 @@ function handlerClickedFav(ev) {
   } else {
     favAnimes.splice(favClicked, 1);
   }
+  renderResults();
   renderFavResults();
-  //renderResults();
   setInLocalStorage();
 }
 

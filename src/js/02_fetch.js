@@ -12,8 +12,9 @@ function getUserInput(ev) {
 
 function handlerResetBtnFav(ev) {
   ev.preventDefault();
-  localStorage.clear();
   favResults.innerHTML = "";
+  localStorage.clear();
+  location.reload();
 }
 
 function handlerResetBtn(ev) {

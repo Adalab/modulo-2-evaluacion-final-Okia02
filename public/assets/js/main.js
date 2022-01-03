@@ -25,8 +25,9 @@ function getUserInput(ev) {
 
 function handlerResetBtnFav(ev) {
   ev.preventDefault();
-  localStorage.clear();
   favResults.innerHTML = "";
+  localStorage.clear();
+  location.reload();
 }
 
 function handlerResetBtn(ev) {
@@ -45,29 +46,18 @@ resetBtnFav.addEventListener("click", handlerResetBtnFav);
 function renderResults() {
   searchResults.innerHTML = "";
   for (const anime of animes) {
-    searchResults.innerHTML += `<li class='li-element js-li-element' id='${
+    const animeInFav = favAnimes.find((fav) => fav.mal_id === anime.mal_id);
+    let favClass = "";
+    animeInFav !== undefined ? (favClass = "fav") : (favClass = "");
+    searchResults.innerHTML += `<li class='li-element js-li-element ${favClass}' id='${
       anime.mal_id
     }'><img class='anime-img' src='${
       anime.image_url ||
       "https://via.placeholder.com/210x295/ffffff/666666/?text=TV"
     }'><h3 class='anime-title'>${anime.title}</h3></li>`;
   }
-  //compareFavResults()
-  handlerClickedAnime();
+   handlerClickedAnime();  
 }
-
-/*function compareFavResults() {
- const lisSelected = document.querySelectorAll(".js-li-element");
-  for (const liSelected of lisSelected) {
-    const isFav = favAnimes.find((fav) => fav.mal_id === liSelected.id);
-    console.log(fav.mal_id);
-  if (isFav === undefined) {
-    liSelected.classList.remove("fav");
-  } else {
-    liSelected.classList.add("fav");
-  }
-  } 
-}*/
 
 function renderFavResults() {
   favResults.innerHTML = "";
@@ -101,8 +91,8 @@ function handlerClickedFav(ev) {
   } else {
     favAnimes.splice(favClicked, 1);
   }
+  renderResults();
   renderFavResults();
-  //renderResults();
   setInLocalStorage();
 }
 

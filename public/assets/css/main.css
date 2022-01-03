@@ -104,6 +104,20 @@ body {
   color: #f5adeb;
   line-height: 1.5; }
 
+.btn {
+  background-color: #000;
+  height: 30px;
+  padding: 0 10px;
+  color: #fff;
+  font-weight: 600;
+  border: 3px #d3f360 solid;
+  border-radius: 50px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s; }
+  .btn:hover {
+    color: #f5adeb; }
+
 .header {
   width: 100%;
   position: fixed;
@@ -117,36 +131,26 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 30px;
-    color: #f5adeb; }
+    color: #f5adeb;
+    margin-bottom: 15px; }
   .header__form {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center; }
     .header__form .input-search {
+      margin: 0 15px;
       width: 300px;
       height: 40px;
       background-color: #d3f360;
       color: #f5adeb;
       padding: 0 10px;
       border-radius: 50px; }
-
-.btn {
-  background-color: #000;
-  height: 30px;
-  padding: 0 10px;
-  color: #fff;
-  font-weight: 600;
-  border: 3px #d3f360 solid;
-  border-radius: 50px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all .3s; }
-  .btn:hover {
-    color: #f5adeb; }
+    .header__form .submit-btn {
+      margin-right: 15px; }
 
 .main {
-  padding-top: 150px;
+  padding-top: 160px;
   text-align: center;
   display: flex; }
   .main__fav-section {
@@ -214,7 +218,8 @@ body {
           text-align: center; }
 
 .fav {
-  background-color: aqua; }
+  background-color: #f5adeb;
+  color: #d3f360; }
 
 .footer {
   position: fixed;
