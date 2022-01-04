@@ -1,14 +1,15 @@
 .footer {
-position: fixed;
-bottom: 0;
-height: 50px;
-width: 100%;
-background-color: white; 
-display: flex;
-justify-content: center;
-align-items: center;
-    &__text{
-       font-family: $font;
-       font-weight: 600;
-    }
+  position: fixed;
+  bottom: 0;
+  height: 30px;
+  width: 100%;
+  background-color: $stColor;
+  text-align: center;
+  &__text {
+    font-family: $font;
+    font-weight: 600;
+    color: $ndColor;
+    font-size: 12px;
+    
+  }
 }

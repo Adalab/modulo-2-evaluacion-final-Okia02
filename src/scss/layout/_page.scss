@@ -1,17 +1,35 @@
 .main {
-  padding-top: 160px;
+  padding-top: 200px;
   text-align: center;
   display: flex;
   &__fav-section {
-    border: #f5adeb solid;
+    border: $ndColor solid;
+    box-shadow: 3px 3px $favColor;
     border-radius: 50px;
-    margin-left: 5%;
-    width: 200px;
+    margin-left: 3%;
+    width: 250px;
     height: fit-content;
-
     .subtitle-fav {
       @include titles;
-      padding: 10px 0;
+      margin-top: 15px;
+      color: $favColor;
+      text-shadow: 1px 1px $ndColor;
+    }
+    .reset-btn-fav {
+      height: 25px;
+      font-size: 12px;
+      margin: 5px;
+      background-color: #000;
+      padding: 0 10px;
+      color: $favColor;
+      border: 3px $rdColor solid;
+      box-shadow: 2px 2px $ndColor;
+      &:hover {
+        color: $favColor;
+        background-color: $ndColor;
+        border: 3px $ndColor solid;
+        box-shadow: 5px 5px $favColor;
+      }
     }
     .fav-list {
       margin: 15px;
@@ -20,35 +38,37 @@
         flex-direction: column;
         align-items: center;
         margin: 10px;
-
         .anime-img {
-          width: 90px;
+          width: 100px;
         }
         .anime-title {
           font-family: $font;
-          font-size: 14px;
+          font-size: 12px;
           line-height: 1;
           padding: 7px;
+          color: $favColor;
         }
-        .fas {
-          color: #d3f360;
-          border: solid #f5adeb 2px;
-          padding: 5px;
+        .fa-times {
+          color: $ndColor;
           border-radius: 50px;
+          text-shadow: 2px 1px $favColor;
           cursor: pointer;
         }
       }
     }
   }
   &__results-section {
-    border: #f5adeb solid;
+    border: $stColor solid;
+    box-shadow: 3px 3px $ndColor;
     border-radius: 50px;
-    margin: 0 5%;
+    margin: 0 3%;
     width: 100%;
     .subtitle-results {
       @include titles;
       font-size: 24px;
       padding: 10px 0;
+      color: $stColor;
+      text-shadow: 2px 2px $ndColor;
     }
     .result-list {
       display: flex;
@@ -58,7 +78,10 @@
       margin-bottom: 20px;
       .li-element {
         width: 30%;
+        margin: 0 10px;
+        cursor: pointer;
         .anime-img {
+          margin-top: 15px;
           height: 220px;
           width: 150px;
         }
@@ -67,15 +90,19 @@
           font-size: 14px;
           line-height: 1;
           margin: 0 10px 10px;
-
           text-align: center;
         }
-      }
-    }
+      }      
+    }    
   }
 }
 
 .fav {
-  background-color: #f5adeb;
-  color: #d3f360;
+  background: linear-gradient(
+    180deg,
+    rgba(248, 15, 154, 1) 22%,
+    rgba(78, 253, 84, 1) 57%,
+    rgba(0, 0, 0, 1) 91%
+  );
+  color: $favColor;
 }

@@ -101,22 +101,26 @@ input {
 
 body {
   background-color: #000;
-  color: #f5adeb;
+  color: #f80f9a;
   line-height: 1.5; }
 
 .btn {
   background-color: #000;
   height: 30px;
   padding: 0 10px;
-  color: #fff;
+  color: #f80f9a;
   font-weight: 600;
-  border: 3px #d3f360 solid;
+  border: 3px #3694d0 solid;
   border-radius: 50px;
   text-transform: uppercase;
+  box-shadow: 2px 2px #fff;
   cursor: pointer;
-  transition: all 0.3s; }
+  transition: all .1s; }
   .btn:hover {
-    color: #f5adeb; }
+    color: #f80f9a;
+    background-color: #fff;
+    border: 3px #fff solid;
+    box-shadow: 5px 5px #f80f9a; }
 
 .header {
   width: 100%;
@@ -130,9 +134,10 @@ body {
     font-family: Verdana, Tahoma, sans-serif;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 30px;
-    color: #f5adeb;
-    margin-bottom: 15px; }
+    font-size: 35px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px #f80f9a; }
   .header__form {
     display: flex;
     flex-direction: row;
@@ -142,22 +147,26 @@ body {
       margin: 0 15px;
       width: 300px;
       height: 40px;
-      background-color: #d3f360;
-      color: #f5adeb;
-      padding: 0 10px;
-      border-radius: 50px; }
+      background-color: #000;
+      color: #f80f9a;
+      font-size: 16px;
+      padding: 0 15px;
+      border-radius: 50px;
+      border: solid 3px #fff;
+      box-shadow: 3px 3px #f80f9a; }
     .header__form .submit-btn {
       margin-right: 15px; }
 
 .main {
-  padding-top: 160px;
+  padding-top: 200px;
   text-align: center;
   display: flex; }
   .main__fav-section {
-    border: #f5adeb solid;
+    border: #fff solid;
+    box-shadow: 3px 3px #4efd54;
     border-radius: 50px;
-    margin-left: 5%;
-    width: 200px;
+    margin-left: 3%;
+    width: 250px;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content; }
@@ -166,7 +175,23 @@ body {
       font-weight: 600;
       font-size: 18px;
       text-transform: uppercase;
-      padding: 10px 0; }
+      margin-top: 15px;
+      color: #4efd54;
+      text-shadow: 1px 1px #fff; }
+    .main__fav-section .reset-btn-fav {
+      height: 25px;
+      font-size: 12px;
+      margin: 5px;
+      background-color: #000;
+      padding: 0 10px;
+      color: #4efd54;
+      border: 3px #3694d0 solid;
+      box-shadow: 2px 2px #fff; }
+      .main__fav-section .reset-btn-fav:hover {
+        color: #4efd54;
+        background-color: #fff;
+        border: 3px #fff solid;
+        box-shadow: 5px 5px #4efd54; }
     .main__fav-section .fav-list {
       margin: 15px; }
       .main__fav-section .fav-list .li-element {
@@ -175,22 +200,23 @@ body {
         align-items: center;
         margin: 10px; }
         .main__fav-section .fav-list .li-element .anime-img {
-          width: 90px; }
+          width: 100px; }
         .main__fav-section .fav-list .li-element .anime-title {
           font-family: Verdana, Tahoma, sans-serif;
-          font-size: 14px;
+          font-size: 12px;
           line-height: 1;
-          padding: 7px; }
-        .main__fav-section .fav-list .li-element .fas {
-          color: #d3f360;
-          border: solid #f5adeb 2px;
-          padding: 5px;
+          padding: 7px;
+          color: #4efd54; }
+        .main__fav-section .fav-list .li-element .fa-times {
+          color: #fff;
           border-radius: 50px;
+          text-shadow: 2px 1px #4efd54;
           cursor: pointer; }
   .main__results-section {
-    border: #f5adeb solid;
+    border: #f80f9a solid;
+    box-shadow: 3px 3px #fff;
     border-radius: 50px;
-    margin: 0 5%;
+    margin: 0 3%;
     width: 100%; }
     .main__results-section .subtitle-results {
       font-family: Verdana, Tahoma, sans-serif;
@@ -198,7 +224,9 @@ body {
       font-size: 18px;
       text-transform: uppercase;
       font-size: 24px;
-      padding: 10px 0; }
+      padding: 10px 0;
+      color: #f80f9a;
+      text-shadow: 2px 2px #fff; }
     .main__results-section .result-list {
       display: flex;
       align-items: flex-start;
@@ -206,8 +234,11 @@ body {
       flex-wrap: wrap;
       margin-bottom: 20px; }
       .main__results-section .result-list .li-element {
-        width: 30%; }
+        width: 30%;
+        margin: 0 10px;
+        cursor: pointer; }
         .main__results-section .result-list .li-element .anime-img {
+          margin-top: 15px;
           height: 220px;
           width: 150px; }
         .main__results-section .result-list .li-element .anime-title {
@@ -218,20 +249,20 @@ body {
           text-align: center; }
 
 .fav {
-  background-color: #f5adeb;
-  color: #d3f360; }
+  background: linear-gradient(180deg, #f80f9a 22%, #4efd54 57%, black 91%);
+  color: #4efd54; }
 
 .footer {
   position: fixed;
   bottom: 0;
-  height: 50px;
+  height: 30px;
   width: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  background-color: #f80f9a;
+  text-align: center; }
   .footer__text {
     font-family: Verdana, Tahoma, sans-serif;
-    font-weight: 600; }
+    font-weight: 600;
+    color: #fff;
+    font-size: 12px; }
 
 /*# sourceMappingURL=main.css.map */

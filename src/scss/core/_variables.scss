@@ -1,21 +1,31 @@
 //Font
 $font: Verdana, Tahoma, sans-serif;
 
+//Colors
+$stColor: #f80f9a;
+$ndColor: #fff;
+$rdColor: #3694d0;
+$favColor: #4efd54;
+
 //Mixins
 //Btns
 @mixin btn {
   background-color: #000;
   height: 30px;
   padding: 0 10px;
-  color: #fff;
+  color: $stColor;
   font-weight: 600;
-  border: 3px #d3f360 solid;
+  border: 3px $rdColor solid;
   border-radius: 50px;
   text-transform: uppercase;
+  box-shadow: 2px 2px $ndColor;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all .1s;
   &:hover {
-    color: #f5adeb;
+    color: $stColor;
+    background-color: $ndColor;
+    border: 3px $ndColor solid;
+    box-shadow: 5px 5px $stColor;
   }
 }
 //Titles
