@@ -6,7 +6,6 @@ const resetBtn = document.querySelector(".js-reset-btn");
 const searchResults = document.querySelector(".js-result-list");
 const resetBtnFav = document.querySelector(".js-reset-btn-fav");
 const favResults = document.querySelector(".js-fav-list");
-const errorMessage = document.querySelector(".js_errorMessage");
 
 let animes = [];
 let favAnimes = [];

@@ -158,7 +158,7 @@ body {
       margin-right: 15px; }
 
 .main {
-  padding-top: 200px;
+  padding-top: 180px;
   text-align: center;
   display: flex; }
   .main__fav-section {
@@ -216,7 +216,7 @@ body {
     border: #f80f9a solid;
     box-shadow: 3px 3px #fff;
     border-radius: 50px;
-    margin: 0 3%;
+    margin: 0 3% 5%;
     width: 100%; }
     .main__results-section .subtitle-results {
       font-family: Verdana, Tahoma, sans-serif;
@@ -237,6 +237,9 @@ body {
         width: 30%;
         margin: 0 10px;
         cursor: pointer; }
+        @media all and (min-width: 1200px) {
+          .main__results-section .result-list .li-element {
+            width: 15%; } }
         .main__results-section .result-list .li-element .anime-img {
           margin-top: 15px;
           height: 220px;
@@ -250,6 +253,7 @@ body {
 
 .fav {
   background: linear-gradient(180deg, #f80f9a 22%, #4efd54 57%, black 91%);
+  border-radius: 20px;
   color: #4efd54; }
 
 .footer {
@@ -264,5 +268,42 @@ body {
     font-weight: 600;
     color: #fff;
     font-size: 12px; }
+
+@media all and (max-width: 768px) {
+  .header {
+    position: relative; }
+    .header__title {
+      margin-bottom: 15px; }
+    .header__form {
+      flex-direction: column; }
+      .header__form .input-search {
+        margin: 0 15px 15px; }
+      .header__form .submit-btn {
+        margin: 0 0 10px; }
+  .main {
+    padding-top: 0;
+    flex-direction: column;
+    margin: 0 5% 5%; }
+    .main__fav-section {
+      margin-left: 0;
+      width: 100%;
+      margin-bottom: 5%; }
+      .main__fav-section .fav-list {
+        display: flex;
+        flex-direction: column; }
+        .main__fav-section .fav-list .li-element {
+          flex-direction: row; }
+    .main__results-section {
+      margin: 0 0 10%; }
+      .main__results-section .result-list {
+        margin-bottom: 10px; }
+        .main__results-section .result-list .li-element {
+          width: 40%;
+          margin: 0 5px; }
+          .main__results-section .result-list .li-element .anime-img {
+            height: 180px;
+            width: 110px; }
+  .footer__text {
+    font-size: 10px; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -20,7 +20,7 @@ $favColor: #4efd54;
   text-transform: uppercase;
   box-shadow: 2px 2px $ndColor;
   cursor: pointer;
-  transition: all .1s;
+  transition: all 0.1s;
   &:hover {
     color: $stColor;
     background-color: $ndColor;

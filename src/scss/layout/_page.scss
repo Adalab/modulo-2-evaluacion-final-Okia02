@@ -1,5 +1,5 @@
 .main {
-  padding-top: 200px;
+  padding-top: 180px;
   text-align: center;
   display: flex;
   &__fav-section {
@@ -61,7 +61,7 @@
     border: $stColor solid;
     box-shadow: 3px 3px $ndColor;
     border-radius: 50px;
-    margin: 0 3%;
+    margin: 0 3% 5%;
     width: 100%;
     .subtitle-results {
       @include titles;
@@ -80,6 +80,9 @@
         width: 30%;
         margin: 0 10px;
         cursor: pointer;
+        @media all and (min-width: 1200px) {
+          width: 15%;
+        }
         .anime-img {
           margin-top: 15px;
           height: 220px;
@@ -92,11 +95,10 @@
           margin: 0 10px 10px;
           text-align: center;
         }
-      }      
-    }    
+      }
+    }
   }
 }
-
 .fav {
   background: linear-gradient(
     180deg,
@@ -104,5 +106,6 @@
     rgba(78, 253, 84, 1) 57%,
     rgba(0, 0, 0, 1) 91%
   );
+  border-radius: 20px;
   color: $favColor;
 }

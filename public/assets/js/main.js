@@ -6,7 +6,6 @@ const resetBtn = document.querySelector(".js-reset-btn");
 const searchResults = document.querySelector(".js-result-list");
 const resetBtnFav = document.querySelector(".js-reset-btn-fav");
 const favResults = document.querySelector(".js-fav-list");
-const errorMessage = document.querySelector(".js_errorMessage");
 
 let animes = [];
 let favAnimes = [];
@@ -47,16 +46,16 @@ function renderResults() {
   searchResults.innerHTML = "";
   for (const anime of animes) {
     const animeInFav = favAnimes.find((fav) => fav.mal_id === anime.mal_id);
-    let favClass = "";
-    animeInFav !== undefined ? (favClass = "fav") : (favClass = "");
-    searchResults.innerHTML += `<li class='li-element js-li-element ${favClass}' id='${
+    let favAdd = "";
+    animeInFav !== undefined ? (favAdd = "fav") : (favAdd = "");
+    searchResults.innerHTML += `<li class='li-element js-li-element ${favAdd}' id='${
       anime.mal_id
     }'><img class='anime-img' src='${
       anime.image_url ||
       "https://via.placeholder.com/210x295/ffffff/666666/?text=TV"
     }'><h3 class='anime-title'>${anime.title}</h3></li>`;
   }
-   handlerClickedAnime();  
+  handlerClickedAnime();
 }
 
 function renderFavResults() {
