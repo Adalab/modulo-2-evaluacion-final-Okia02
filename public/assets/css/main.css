@@ -115,7 +115,7 @@ body {
   text-transform: uppercase;
   box-shadow: 2px 2px #fff;
   cursor: pointer;
-  transition: all .1s; }
+  transition: all 0.1s; }
   .btn:hover {
     color: #f80f9a;
     background-color: #fff;

@@ -27,3 +27,5 @@ submitBtn.addEventListener("click", getUserInput);
 resetBtn.addEventListener("click", handlerResetBtn);
 
 resetBtnFav.addEventListener("click", handlerResetBtnFav);
+
+

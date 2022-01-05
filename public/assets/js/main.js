@@ -40,6 +40,8 @@ resetBtn.addEventListener("click", handlerResetBtn);
 
 resetBtnFav.addEventListener("click", handlerResetBtnFav);
 
+
+
 "use strict";
 
 function renderResults() {
@@ -48,12 +50,18 @@ function renderResults() {
     const animeInFav = favAnimes.find((fav) => fav.mal_id === anime.mal_id);
     let favAdd = "";
     animeInFav !== undefined ? (favAdd = "fav") : (favAdd = "");
+    let airingAnime =
+      anime.airing === true
+        ? `<a class='js-airing' href='${anime.url}'>Más detalles</a>`
+        : `<p class='js-not-airing'>No se está transmitiendo</p>`;
     searchResults.innerHTML += `<li class='li-element js-li-element ${favAdd}' id='${
       anime.mal_id
     }'><img class='anime-img' src='${
       anime.image_url ||
       "https://via.placeholder.com/210x295/ffffff/666666/?text=TV"
-    }'><h3 class='anime-title'>${anime.title}</h3></li>`;
+    }'><h3 class='anime-title'>${
+      anime.title
+    }</h3><div>${airingAnime}</div></li>`;
   }
   handlerClickedAnime();
 }
@@ -78,17 +86,19 @@ function renderFavResults() {
 
 function handlerClickedFav(ev) {
   ev.preventDefault();
+  
   const clickedAnime = parseInt(ev.currentTarget.id);
-  const favClicked = favAnimes.findIndex((fav) => {
+  const favClicked = favAnimes.findIndex((fav) => {    
     return fav.mal_id === clickedAnime;
   });
   if (favClicked === -1) {
     const animeAdd = animes.find((animeElement) => {
       return animeElement.mal_id === clickedAnime;
-    });
+    }); 
     favAnimes.push(animeAdd);
   } else {
     favAnimes.splice(favClicked, 1);
+    console.log(favAnimes[favClicked].title);
   }
   renderResults();
   renderFavResults();
